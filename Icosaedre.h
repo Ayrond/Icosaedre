@@ -11,9 +11,9 @@ class Icosaedre
     public :
 
         Icosaedre();
-        Icosaedre(double lenght, glm::vec3 origin, int sub_div);
+        Icosaedre(float lenght, glm::vec3 origin, int sub_div);
 
-        void set_param(double lenght, glm::vec3 origin, int sub_div);
+        void set_param(float lenght, glm::vec3 origin, int sub_div);
 
         void sub_divide(int nb_subdivision=1);
         size_t vertex_array_size();

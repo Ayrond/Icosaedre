@@ -88,11 +88,38 @@ static const GLfloat g_uv_buffer_data[] = {
 		1.0f, 1.0f-0.671870f,
 		0.0f, 1.0f-0.671877f,
 		0.0f, 1.0f-0.336048f,
-		1.0f, 1.0f-0.671877f,
+		0.0f, 1.0f-0.000004f,
+		1.0f, 1.0f-0.336048f,
 		0.0f, 1.0f-0.335903f,
+		0.0f, 1.0f-0.000013f,
+		1.0f, 1.0f-0.335851f,
+		0.0f, 1.0f-0.336064f,
+		0.0f, 1.0f-0.335851f,
+		1.0f, 1.0f-0.671877f,
 		0.0f, 1.0f-0.671889f,
-		1.0f, 1.0f-0.671847f,
-		0.0f, 1.0f-0.335851f
+		0.0f, 1.0f-0.000013f,
+		1.0f, 1.0f-0.000013f,
+		0.0f, 1.0f-0.335851f,
+		0.0f, 1.0f-0.000004f,
+		1.0f, 1.0f-0.335903f,
+		0.0f, 1.0f-0.000071f,
+		0.0f, 1.0f-0.335851f,
+		1.0f, 1.0f-0.335903f,
+		0.0f, 1.0f-0.671877f,
+		0.0f, 1.0f-0.671847f,
+		1.0f, 1.0f-0.336064f,
+		0.0f, 1.0f-0.335851f,
+		0.0f, 1.0f-0.000013f,
+		1.0f, 1.0f-0.335903f,
+		0.0f, 1.0f-0.335851f,
+		0.0f, 1.0f-0.335903f,
+		1.0f, 1.0f-0.000013f,
+		0.0f, 1.0f-0.000071f,
+		0.0f, 1.0f-0.336048f,
+		1.0f, 1.0f-0.671870f,
+		0.0f, 1.0f-0.671877f,
+		0.0f, 1.0f-0.336048f
+
 	};
 
 int main(){
@@ -100,9 +127,10 @@ int main(){
     Icosaedre Ico = Icosaedre(1.0,glm::vec3(0,0,0),1);
     Ico.set_param(1.0,glm::vec3(0,0,0), 1);
     Ico.calc();
-    GLfloat* g_vertex_buffer_data=(GLfloat*) malloc(Ico.vertex_array_size());
-    g_vertex_buffer_data=Ico.get_vertex_array();
-
+//    GLfloat* g_vertex_buffer_data=(GLfloat*) malloc(Ico.vertex_array_size());
+//    g_vertex_buffer_data=Ico.get_vertex_array();
+    GLfloat* g_vertex_buffer_data=Ico.get_vertex_array();
+    for(int i =0;i<60;i++){cout << g_vertex_buffer_data[i] << endl;}
     if( !glfwInit() )
     {
         cerr << "Failed to initialize GLFW" << endl;
@@ -204,7 +232,7 @@ int main(){
             (void*)0                          // array buffer offset
         );
 
-        glDrawArrays(GL_TRIANGLES, 0, 3*12);
+        glDrawArrays(GL_TRIANGLES, 0, 20);
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
 

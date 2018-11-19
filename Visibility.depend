@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542663202 source:/home/lucas/prog/Copernicus/Visibility/main.cpp
+1542668092 source:/home/lucas/prog/Copernicus/Visibility/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
@@ -24,11 +24,13 @@
 
 1542483690 /home/lucas/prog/Copernicus/Visibility/shader.hpp
 
-1542662654 source:/home/lucas/prog/Copernicus/Visibility/Icosaedre.cpp
+1542668313 source:/home/lucas/prog/Copernicus/Visibility/Icosaedre.cpp
 	"Icosaedre.h"
 	<math.h>
+	<iostream>
+	<cstring>
 
-1542661869 /home/lucas/prog/Copernicus/Visibility/Icosaedre.h
+1542668135 /home/lucas/prog/Copernicus/Visibility/Icosaedre.h
 	<GL/glew.h>
 	<glm/glm.hpp>
 

@@ -1,5 +1,7 @@
 #include "Icosaedre.h"
 #include <math.h>
+#include <iostream>
+#include <cstring>
 
 //double lenght=1, glm::vec3 origin=(glm::vec3) * (0,0,0), int sub_div=1
 
@@ -11,13 +13,13 @@ Icosaedre::Icosaedre(){
         m_sub_div=1;
 }
 
-Icosaedre::Icosaedre(double lenght, glm::vec3 origin, int sub_div):
+Icosaedre::Icosaedre(float lenght, glm::vec3 origin, int sub_div):
     m_lenght(lenght),
     m_origin(origin),
     m_sub_div(sub_div)
 {}
 
-void Icosaedre::set_param(double lenght, glm::vec3 origin, int sub_div){
+void Icosaedre::set_param(float lenght, glm::vec3 origin, int sub_div){
     m_lenght=lenght;
     m_origin=origin;
     m_sub_div=sub_div;
@@ -49,7 +51,7 @@ void Icosaedre::calc(){
 
 void Icosaedre::init(){
     GLfloat buffer_data[]={
-        m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+        m_lenght/ 2.0f, (m_lenght* phi)/ 2.0f, 0.0f,
         0.0f, m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
         m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
 
@@ -129,7 +131,9 @@ void Icosaedre::init(){
         0.0f, m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
         -m_lenght* phi/ 2.0f, 0.0f, -m_lenght/ 2.0f
     };
-    m_g_vertex_buffer_data=buffer_data;
+    m_g_vertex_buffer_data=(float*) malloc(sizeof(buffer_data));
+    memcpy(m_g_vertex_buffer_data,buffer_data,sizeof(buffer_data));
+//    m_g_vertex_buffer_data=buffer_data;
 }
 
 GLfloat* Icosaedre::get_vertex_array(){
