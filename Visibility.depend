@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1542490057 source:/home/lucas/prog/Copernicus/Visibility/main.cpp
+	<iostream>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtx/transform.hpp>
+	"shader.hpp"
+
+1542483750 source:/home/lucas/prog/Copernicus/Visibility/shader.cpp
+	<stdio.h>
+	<string>
+	<vector>
+	<iostream>
+	<fstream>
+	<algorithm>
+	<sstream>
+	<stdlib.h>
+	<string.h>
+	<GL/glew.h>
+	"shader.hpp"
+
+1542483690 /home/lucas/prog/Copernicus/Visibility/shader.hpp
+
