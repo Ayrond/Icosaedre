@@ -1,4 +1,4 @@
-#version 450 core
+#version 330 core
 in vec2 UV;
 
 out vec3 color;
@@ -9,5 +9,5 @@ void main(){
 
     // Output color = color of the texture at the specified UV
     //color = texture( myTextureSampler, UV ).rgb;
-    color = vec3(255,0,0);
+    color = vec3(1,0,0);
 }
