@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542490057 source:/home/lucas/prog/Copernicus/Visibility/main.cpp
+1542662654 source:/home/lucas/prog/Copernicus/Visibility/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
@@ -7,6 +7,7 @@
 	<glm/gtc/matrix_transform.hpp>
 	<glm/gtx/transform.hpp>
 	"shader.hpp"
+	"Icosaedre.h"
 
 1542483750 source:/home/lucas/prog/Copernicus/Visibility/shader.cpp
 	<stdio.h>
@@ -22,4 +23,12 @@
 	"shader.hpp"
 
 1542483690 /home/lucas/prog/Copernicus/Visibility/shader.hpp
+
+1542662654 source:/home/lucas/prog/Copernicus/Visibility/Icosaedre.cpp
+	"Icosaedre.h"
+	<math.h>
+
+1542661869 /home/lucas/prog/Copernicus/Visibility/Icosaedre.h
+	<GL/glew.h>
+	<glm/glm.hpp>
 

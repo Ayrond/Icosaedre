@@ -16,7 +16,7 @@ class Icosaedre
         void set_param(double lenght, glm::vec3 origin, int sub_div);
 
         void sub_divide(int nb_subdivision=1);
-        int vertex_array_lenght();
+        size_t vertex_array_size();
 
         void calc();
 
@@ -24,10 +24,12 @@ class Icosaedre
 
 
     private :
-        double m_lenght;
+        void init();
+
+        float* m_g_vertex_buffer_data=nullptr;
+        float m_lenght;
         glm::vec3 m_origin;
         int m_sub_div;
-        GLfloat m_g_vertex_buffer_data[];
 };
 
 #endif // ICOSAEDRE_H_INCLUDED

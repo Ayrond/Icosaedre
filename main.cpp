@@ -8,6 +8,7 @@
 #include <glm/gtx/transform.hpp>
 
 #include "shader.hpp"
+#include "Icosaedre.h"
 
 using namespace glm;
 using namespace std;
@@ -17,44 +18,44 @@ bool quit=true;
 static const int WINDOW_WIDTH=640;
 static const int WINDOW_HEIGHT=480;
 
-static const GLfloat g_vertex_buffer_data[] = {
-    -1.0f,-1.0f,-1.0f, // triangle 1 : begin
-    -1.0f,-1.0f, 1.0f,
-    -1.0f, 1.0f, 1.0f, // triangle 1 : end
-    1.0f, 1.0f,-1.0f, // triangle 2 : begin
-    -1.0f,-1.0f,-1.0f,
-    -1.0f, 1.0f,-1.0f, // triangle 2 : end
-    1.0f,-1.0f, 1.0f,
-    -1.0f,-1.0f,-1.0f,
-    1.0f,-1.0f,-1.0f,
-    1.0f, 1.0f,-1.0f,
-    1.0f,-1.0f,-1.0f,
-    -1.0f,-1.0f,-1.0f,
-    -1.0f,-1.0f,-1.0f,
-    -1.0f, 1.0f, 1.0f,
-    -1.0f, 1.0f,-1.0f,
-    1.0f,-1.0f, 1.0f,
-    -1.0f,-1.0f, 1.0f,
-    -1.0f,-1.0f,-1.0f,
-    -1.0f, 1.0f, 1.0f,
-    -1.0f,-1.0f, 1.0f,
-    1.0f,-1.0f, 1.0f,
-    1.0f, 1.0f, 1.0f,
-    1.0f,-1.0f,-1.0f,
-    1.0f, 1.0f,-1.0f,
-    1.0f,-1.0f,-1.0f,
-    1.0f, 1.0f, 1.0f,
-    1.0f,-1.0f, 1.0f,
-    1.0f, 1.0f, 1.0f,
-    1.0f, 1.0f,-1.0f,
-    -1.0f, 1.0f,-1.0f,
-    1.0f, 1.0f, 1.0f,
-    -1.0f, 1.0f,-1.0f,
-    -1.0f, 1.0f, 1.0f,
-    1.0f, 1.0f, 1.0f,
-    -1.0f, 1.0f, 1.0f,
-    1.0f,-1.0f, 1.0f
-};
+//static const GLfloat g_vertex_buffer_data[] = {
+//    -1.0f,-1.0f,-1.0f, // triangle 1 : begin
+//    -1.0f,-1.0f, 1.0f,
+//    -1.0f, 1.0f, 1.0f, // triangle 1 : end
+//    1.0f, 1.0f,-1.0f, // triangle 2 : begin
+//    -1.0f,-1.0f,-1.0f,
+//    -1.0f, 1.0f,-1.0f, // triangle 2 : end
+//    1.0f,-1.0f, 1.0f,
+//    -1.0f,-1.0f,-1.0f,
+//    1.0f,-1.0f,-1.0f,
+//    1.0f, 1.0f,-1.0f,
+//    1.0f,-1.0f,-1.0f,
+//    -1.0f,-1.0f,-1.0f,
+//    -1.0f,-1.0f,-1.0f,
+//    -1.0f, 1.0f, 1.0f,
+//    -1.0f, 1.0f,-1.0f,
+//    1.0f,-1.0f, 1.0f,
+//    -1.0f,-1.0f, 1.0f,
+//    -1.0f,-1.0f,-1.0f,
+//    -1.0f, 1.0f, 1.0f,
+//    -1.0f,-1.0f, 1.0f,
+//    1.0f,-1.0f, 1.0f,
+//    1.0f, 1.0f, 1.0f,
+//    1.0f,-1.0f,-1.0f,
+//    1.0f, 1.0f,-1.0f,
+//    1.0f,-1.0f,-1.0f,
+//    1.0f, 1.0f, 1.0f,
+//    1.0f,-1.0f, 1.0f,
+//    1.0f, 1.0f, 1.0f,
+//    1.0f, 1.0f,-1.0f,
+//    -1.0f, 1.0f,-1.0f,
+//    1.0f, 1.0f, 1.0f,
+//    -1.0f, 1.0f,-1.0f,
+//    -1.0f, 1.0f, 1.0f,
+//    1.0f, 1.0f, 1.0f,
+//    -1.0f, 1.0f, 1.0f,
+//    1.0f,-1.0f, 1.0f
+//};
 static const GLfloat g_uv_buffer_data[] = {
 		0.0f, 1.0f-0.000004f,
 		1.0f, 1.0f-0.336048f,
@@ -95,6 +96,12 @@ static const GLfloat g_uv_buffer_data[] = {
 	};
 
 int main(){
+
+    Icosaedre Ico = Icosaedre(1.0,glm::vec3(0,0,0),1);
+    Ico.set_param(1.0,glm::vec3(0,0,0), 1);
+    Ico.calc();
+    GLfloat* g_vertex_buffer_data=(GLfloat*) malloc(Ico.vertex_array_size());
+    g_vertex_buffer_data=Ico.get_vertex_array();
 
     if( !glfwInit() )
     {
@@ -149,7 +156,7 @@ int main(){
     glm::mat4 Projection = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT, 0.1f, 100.0f);
     //glm::mat4 Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,0.0f,100.0f); // In world coordinates
     glm::mat4 View = glm::lookAt(
-                   glm::vec3(4,3,3), // Camera is at (4,3,3), in World Space
+                   glm::vec3(20,15,15), // Camera is at (4,3,3), in World Space
                    glm::vec3(0,0,0), // and looks at the origin
                    glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
                    );
@@ -180,7 +187,7 @@ int main(){
         glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
         glVertexAttribPointer(
            0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-           3,                  // size
+           3,                  // size();
            GL_FLOAT,           // type
            GL_FALSE,           // normalized?
            0,                  // stride
