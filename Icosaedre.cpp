@@ -1,6 +1,6 @@
 #include "Icosaedre.h"
 
-#define phi = (1+(5**(1/2))/2)
+#define phi = ((1+(5**(1/2)))/2)
 
 //double lenght=1, glm::vec3 origin=(glm::vec3) * (0,0,0), int sub_div=1
 
@@ -33,9 +33,9 @@ int Icosaedre::vertex_array_lenght(){
 //(0,a/2,aL/2)
 //(aL/2,0,a/2)
 void Icosaedre::calc(){
-    for(int i=0;i<20;i++){
+    for(int i=0;i<(20*3);i=i+3){
             for(int j=0;i<3;j++){
-                m_g_vertex_buffer_data[]+={(GLfloat)** (m_lenght/2),(GLfloat)** ((m_lenght*phi)/2),0.0f}
+                m_g_vertex_buffer_data[i+j]=(GLfloat)* (m_lenght/2);
             }
 
     }
