@@ -40,6 +40,8 @@
 		<Linker>
 			<Add option="`pkg-config glfw3 glew gl glm --libs`" />
 		</Linker>
+		<Unit filename="Icosaedre.cpp" />
+		<Unit filename="Icosaedre.h" />
 		<Unit filename="Shaders/SimpleFragment.shader">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
