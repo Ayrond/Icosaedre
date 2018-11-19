@@ -1,0 +1,79 @@
+m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+0.0f, m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
+
+0.0f, m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+-m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
+-m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+
+0.0f, m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+0.0f, -m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
+
+0.0f, m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+0.0f, -m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+-m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
+
+m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+0.0f, -m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
+
+0.0f, m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+-m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
+-m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+
+m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+-m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+0.0f, m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+
+m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+-m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+0.0f, m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+
+m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+-m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+0.0f, -m_lenght/ 2.0f, m_lenght* phi/ 2.0f,
+
+m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+-m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+0.0f, -m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+
+0.0f, m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+0.0f, -m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+-m_lenght* phi/ 2.0f, 0.0f, -m_lenght/ 2.0f,
+
+0.0f, m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+0.0f, -m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+m_lenght* phi/ 2.0f, 0.0f, m_lenght/ 2.0f,
+
+m_lenght* phi/ 2.0f, -m_lenght/ 2.0f, 0.0f,
+m_lenght* phi/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+
+m_lenght* phi/ 2.0f, -m_lenght/ 2.0f, 0.0f,
+m_lenght* phi/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+
+-m_lenght* phi/ 2.0f, -m_lenght/ 2.0f, 0.0f,
+-m_lenght* phi/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+-m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+
+-m_lenght* phi/ 2.0f, -m_lenght/ 2.0f, 0.0f,
+-m_lenght* phi/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+-m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+
+m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+0.0f, m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+m_lenght* phi/ 2.0f, 0.0f, -m_lenght/ 2.0f,
+
+m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+0.0f, -m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+m_lenght* phi/ 2.0f, 0.0f, -m_lenght/ 2.0f,
+
+-m_lenght/ 2.0f, -m_lenght* phi/ 2.0f, 0.0f,
+0.0f, -m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+-m_lenght* phi/ 2.0f, 0.0f, -m_lenght/ 2.0f,
+
+-m_lenght/ 2.0f, m_lenght* phi/ 2.0f, 0.0f,
+0.0f, m_lenght/ 2.0f, -m_lenght* phi/ 2.0f,
+-m_lenght* phi/ 2.0f, 0.0f, -m_lenght/ 2.0f
