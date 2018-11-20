@@ -82,19 +82,8 @@ static const GLfloat g_vertex_buffer_data[] = {
 //1604,620,545,12,2130,315
 //
 //};
-GLfloat g_uv_buffer_data[] = {
-		0,0,2142,0,2142/2,1265,
-545,620,545,12,17,315,
-545,620,1074,925,1074,316,
-545,620,1074,925,545,1231,
-1074,925,1604,620,1074,316,
-1074,925,1604,620,1600,1230,
-1604,620,545,12,1074,316,
-1604,620,545,12,2130,315
-
-};
-//	GLfloat g_uv_buffer_data[] = {
-//		545.0f,620.0f,545.0f,12.0f,1074.0f,316.0f,
+//GLfloat g_uv_buffer_data[] = {
+//		0,0,2142,0,2142/2,1265,
 //545,620,545,12,17,315,
 //545,620,1074,925,1074,316,
 //545,620,1074,925,545,1231,
@@ -103,7 +92,18 @@ GLfloat g_uv_buffer_data[] = {
 //1604,620,545,12,1074,316,
 //1604,620,545,12,2130,315
 //
-//	};
+//};
+	GLfloat g_uv_buffer_data[] = {
+		545,620,545,12,1074,316,
+        545,620,545,12,1074,315,
+        545,620,1074,925,1074,316,
+        545,620,1074,925,545,1231,
+        1074,925,1604,620,1074,316,
+        1074,925,1604,620,1600,1230,
+        1604,620,545,12,1074,316,
+        1604,620,545,12,2130,315
+
+	};
 
 
 int main(){
@@ -116,7 +116,7 @@ int main(){
 //    GLfloat* g_vertex_buffer_data=Ico.get_vertex_array();
 //    for(int i =0;i<60;i++){cout << g_vertex_buffer_data[i] << endl;}
 //    for(int i =0;i<48;i++){cout << g_uv_buffer_data[i] << endl;}
-    for(int i=0;i<48;i=i+2){g_uv_buffer_data[i]=g_uv_buffer_data[i]/2142;g_uv_buffer_data[i+1]=g_uv_buffer_data[i]/1265;}
+    for(int i=0;i<48;i=i+2){g_uv_buffer_data[i]=g_uv_buffer_data[i]/2142;g_uv_buffer_data[i+1]=g_uv_buffer_data[i+1]/1265;}
     for(int i =0;i<48;i++){cout << g_uv_buffer_data[i] << endl;}
     cout << "Size Array:" << sizeof(g_vertex_buffer_data) << endl;
     cout << "Triangles:" << (sizeof(g_vertex_buffer_data)/(sizeof(float)*3)) << endl;
