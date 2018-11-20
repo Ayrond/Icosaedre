@@ -71,8 +71,19 @@ static const GLfloat g_vertex_buffer_data[] = {
 //    1.0f,-1.0f, 1.0f
 //};
 
+//GLfloat g_uv_buffer_data[] = {
+//		545.0f,620.0f,545.0f,12.0f,1074.0f,316.0f,
+//545,620,545,12,17,315,
+//545,620,1074,925,1074,316,
+//545,620,1074,925,545,1231,
+//1074,925,1604,620,1074,316,
+//1074,925,1604,620,1600,1230,
+//1604,620,545,12,1074,316,
+//1604,620,545,12,2130,315
+//
+//};
 GLfloat g_uv_buffer_data[] = {
-		545.0f,620.0f,545.0f,12.0f,1074.0f,316.0f,
+		0,0,2142,0,2142/2,1265,
 545,620,545,12,17,315,
 545,620,1074,925,1074,316,
 545,620,1074,925,545,1231,
@@ -81,7 +92,7 @@ GLfloat g_uv_buffer_data[] = {
 1604,620,545,12,1074,316,
 1604,620,545,12,2130,315
 
-	};
+};
 //	GLfloat g_uv_buffer_data[] = {
 //		545.0f,620.0f,545.0f,12.0f,1074.0f,316.0f,
 //545,620,545,12,17,315,
@@ -106,7 +117,7 @@ int main(){
 //    for(int i =0;i<60;i++){cout << g_vertex_buffer_data[i] << endl;}
 //    for(int i =0;i<48;i++){cout << g_uv_buffer_data[i] << endl;}
     for(int i=0;i<48;i=i+2){g_uv_buffer_data[i]=g_uv_buffer_data[i]/2142;g_uv_buffer_data[i+1]=g_uv_buffer_data[i]/1265;}
-//    for(int i =0;i<48;i++){cout << g_uv_buffer_data[i] << endl;}
+    for(int i =0;i<48;i++){cout << g_uv_buffer_data[i] << endl;}
     cout << "Size Array:" << sizeof(g_vertex_buffer_data) << endl;
     cout << "Triangles:" << (sizeof(g_vertex_buffer_data)/(sizeof(float)*3)) << endl;
 
@@ -163,7 +174,7 @@ int main(){
 
 //    GLuint Texture = loadBMP_custom("Textures/2k_earth_clouds.bmp");
 
-    GLuint Texture = loadBMP_custom("Textures/Earth_Tetra2.bmp");
+    GLuint Texture = loadBMP_custom("Textures/Earth_Tetra3.bmp");
     GLuint TextureID  = glGetUniformLocation(programID, "myTextureSampler");
 
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
