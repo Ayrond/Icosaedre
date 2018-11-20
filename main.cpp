@@ -174,10 +174,11 @@ int main(){
 
 //    GLuint Texture = loadBMP_custom("Textures/2k_earth_clouds.bmp");
 
-    GLuint Texture = loadBMP_custom("Textures/Earth_Tetra3.bmp");
+    GLuint Texture = loadBMP_custom("Textures/Earth_Tetra4.bmp");
     GLuint TextureID  = glGetUniformLocation(programID, "myTextureSampler");
 
-    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+//    glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+    glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
     glm::mat4 ProjectionMatrix;
     glm::mat4 ViewMatrix;
     glm::mat4 ModelMatrix = glm::mat4(1.0);
