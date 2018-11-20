@@ -18,6 +18,20 @@ bool quit=true;
 static const int WINDOW_WIDTH=640;
 static const int WINDOW_HEIGHT=480;
 
+const float r2 = sqrt(2);
+
+//static const GLfloat g_vertex_buffer_data[] = {0.5f,0.809017f,0f,0f,0.5f,0.809017f,0.809017f,0f,0.5f,0f,0.5f,0.809017f,-0.809017f,0f,0.5f,-0.5f,0.809017f,0f,0f,0.5f,0.809017f,0f,-0.5f,0.809017f,0.809017f,0f,0.5f,0f,0.5f,0.809017f,0f,-0.5f,0.809017f,-0.809017f,0f,0.5f,0.5f,-0.809017f,0f,0f,-0.5f,0.809017f,0.809017f,0f,0.5f,0f,0.5f,-0.809017f,-0.809017f,0f,0.5f,-0.5f,-0.809017f,0f,0.5f,0.809017f,0f,-0.5f,0.809017f,0f};
+static const GLfloat g_vertex_buffer_data[] = {
+    1,1,0,-1,1,0,0,0,r2,
+    1,1,0,-1,1,0,0,0,-r2,
+    1,1,0,1,-1,0,0,0,r2,
+    1,1,0,1,-1,0,0,0,-r2,
+    1,-1,0,-1,-1,0,0,0,r2,
+    1,-1,0,-1,-1,0,0,0,-r2,
+    -1,-1,0,-1,1,0,0,0,r2,
+    -1,-1,0,-1,1,0,0,0,-r2
+};
+//static const GLfloat g_vertex_buffer_data[] = {0.5, 0.809017, 0, 0, 0.5, 0.809017, 0.809017, 0, 0.5, 0, 0.5, 0.809017, -0.809017, 0, 0.5, -0.5, 0.809017, 0, 0, 0.5, 0.809017, 0, -0.5, 0.809017, 0.809017, 0, 0.5, 0, 0.5, 0.809017, 0, -0.5, 0.809017, -0.809017, 0, 0.5, 0.5, -0.809017, 0, 0, -0.5, 0.809017, 0.809017, 0, 0.5, 0, 0.5, -0.809017, -0.809017, 0, 0.5, -0.5, -0.809017, 0, 0.5, 0.809017, 0, -0.5, 0.809017, 0};
 //static const GLfloat g_vertex_buffer_data[] = {
 //    -1.0f,-1.0f,-1.0f, // triangle 1 : begin
 //    -1.0f,-1.0f, 1.0f,
@@ -56,81 +70,46 @@ static const int WINDOW_HEIGHT=480;
 //    -1.0f, 1.0f, 1.0f,
 //    1.0f,-1.0f, 1.0f
 //};
-static const GLfloat g_uv_buffer_data[] = {
-		0.0f, 1.0f-0.000004f,
-		1.0f, 1.0f-0.336048f,
-		0.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.000013f,
-		1.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.336064f,
-		0.0f, 1.0f-0.335851f,
-		1.0f, 1.0f-0.671877f,
-		0.0f, 1.0f-0.671889f,
-		0.0f, 1.0f-0.000013f,
-		1.0f, 1.0f-0.000013f,
-		0.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.000004f,
-		1.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.000071f,
-		0.0f, 1.0f-0.335851f,
-		1.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.671877f,
-		0.0f, 1.0f-0.671847f,
-		1.0f, 1.0f-0.336064f,
-		0.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.000013f,
-		1.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.335903f,
-		1.0f, 1.0f-0.000013f,
-		0.0f, 1.0f-0.000071f,
-		0.0f, 1.0f-0.336048f,
-		1.0f, 1.0f-0.671870f,
-		0.0f, 1.0f-0.671877f,
-		0.0f, 1.0f-0.336048f,
-		0.0f, 1.0f-0.000004f,
-		1.0f, 1.0f-0.336048f,
-		0.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.000013f,
-		1.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.336064f,
-		0.0f, 1.0f-0.335851f,
-		1.0f, 1.0f-0.671877f,
-		0.0f, 1.0f-0.671889f,
-		0.0f, 1.0f-0.000013f,
-		1.0f, 1.0f-0.000013f,
-		0.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.000004f,
-		1.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.000071f,
-		0.0f, 1.0f-0.335851f,
-		1.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.671877f,
-		0.0f, 1.0f-0.671847f,
-		1.0f, 1.0f-0.336064f,
-		0.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.000013f,
-		1.0f, 1.0f-0.335903f,
-		0.0f, 1.0f-0.335851f,
-		0.0f, 1.0f-0.335903f,
-		1.0f, 1.0f-0.000013f,
-		0.0f, 1.0f-0.000071f,
-		0.0f, 1.0f-0.336048f,
-		1.0f, 1.0f-0.671870f,
-		0.0f, 1.0f-0.671877f,
-		0.0f, 1.0f-0.336048f
+
+GLfloat g_uv_buffer_data[] = {
+		545.0f,620.0f,545.0f,12.0f,1074.0f,316.0f,
+545,620,545,12,17,315,
+545,620,1074,925,1074,316,
+545,620,1074,925,545,1231,
+1074,925,1604,620,1074,316,
+1074,925,1604,620,1600,1230,
+1604,620,545,12,1074,316,
+1604,620,545,12,2130,315
 
 	};
+//	GLfloat g_uv_buffer_data[] = {
+//		545.0f,620.0f,545.0f,12.0f,1074.0f,316.0f,
+//545,620,545,12,17,315,
+//545,620,1074,925,1074,316,
+//545,620,1074,925,545,1231,
+//1074,925,1604,620,1074,316,
+//1074,925,1604,620,1600,1230,
+//1604,620,545,12,1074,316,
+//1604,620,545,12,2130,315
+//
+//	};
+
 
 int main(){
 
-    Icosaedre Ico = Icosaedre(1.0,glm::vec3(0,0,0),1);
-    Ico.set_param(1.0,glm::vec3(0,0,0), 1);
-    Ico.calc();
-//    GLfloat* g_vertex_buffer_data=(GLfloat*) malloc(Ico.vertex_array_size());
-//    g_vertex_buffer_data=Ico.get_vertex_array();
-    GLfloat* g_vertex_buffer_data=Ico.get_vertex_array();
-    for(int i =0;i<60;i++){cout << g_vertex_buffer_data[i] << endl;}
+//    Icosaedre Ico = Icosaedre(1.0,glm::vec3(0,0,0),1);
+//    Ico.set_param(1.0,glm::vec3(0,0,0), 1);
+//    Ico.calc();
+////    GLfloat* g_vertex_buffer_data=(GLfloat*) malloc(Ico.vertex_array_size());
+////    g_vertex_buffer_data=Ico.get_vertex_array();
+//    GLfloat* g_vertex_buffer_data=Ico.get_vertex_array();
+//    for(int i =0;i<60;i++){cout << g_vertex_buffer_data[i] << endl;}
+//    for(int i =0;i<48;i++){cout << g_uv_buffer_data[i] << endl;}
+    for(int i=0;i<48;i=i+2){g_uv_buffer_data[i]=g_uv_buffer_data[i]/2142;g_uv_buffer_data[i+1]=g_uv_buffer_data[i]/1265;}
+//    for(int i =0;i<48;i++){cout << g_uv_buffer_data[i] << endl;}
+    cout << "Size Array:" << sizeof(g_vertex_buffer_data) << endl;
+    cout << "Triangles:" << (sizeof(g_vertex_buffer_data)/(sizeof(float)*3)) << endl;
+
     if( !glfwInit() )
     {
         cerr << "Failed to initialize GLFW" << endl;
@@ -180,32 +159,87 @@ int main(){
 
     GLuint programID = LoadShaders( "Shaders/SimpleVertex.shader", "Shaders/SimpleFragment.shader" );
 
-
-    glm::mat4 Projection = glm::perspective(glm::radians(45.0f), (float)WINDOW_WIDTH / (float)WINDOW_HEIGHT, 0.1f, 100.0f);
-    //glm::mat4 Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,0.0f,100.0f); // In world coordinates
-    glm::mat4 View = glm::lookAt(
-                   glm::vec3(20,15,15), // Camera is at (4,3,3), in World Space
-                   glm::vec3(0,0,0), // and looks at the origin
-                   glm::vec3(0,1,0)  // Head is up (set to 0,-1,0 to look upside-down)
-                   );
-    glm::mat4 Model = glm::mat4(1.0f);
-
-    glm::mat4 mvp = Projection * View * Model;
-
     GLuint MatrixID = glGetUniformLocation(programID, "MVP");
 
-//    GLuint Texture = loadDDS("Textures/2k_earth_clouds.dds");
+//    GLuint Texture = loadBMP_custom("Textures/2k_earth_clouds.bmp");
 
-    GLuint Texture = loadBMP_custom("Textures/2k_earth_daymap.bmp");
+    GLuint Texture = loadBMP_custom("Textures/Earth_Tetra.bmp");
     GLuint TextureID  = glGetUniformLocation(programID, "myTextureSampler");
 
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
+    glm::mat4 ProjectionMatrix;
+    glm::mat4 ViewMatrix;
+    glm::mat4 ModelMatrix = glm::mat4(1.0);
+
+    double currentTime,lastTime,deltaTime;
+
+    glm::vec3 position = glm::vec3( 0, 0, 5);
+    // horizontal angle : toward -Z
+    float horizontalAngle = -3.14f;
+    // vertical angle : 0, look at the horizon
+    float verticalAngle = 0.0f;
+    // Initial Field of View
+    float initialFoV = 45.0f;
+
+    float speed = 3.0f; // 3 units / second
+    float mouseSpeed = 0.01f;
 
     do{
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+
+        double xpos, ypos, xcpos, ycpos, Cursor_Wheel_pos;
+        glfwGetCursorPos(window, &xpos, &ypos);
+        glfwSetCursorPos(window, WINDOW_HEIGHT/2, WINDOW_WIDTH/2);
+
+        currentTime= glfwGetTime();
+        deltaTime= currentTime-lastTime;
+        lastTime=currentTime;
+
+        horizontalAngle += mouseSpeed * deltaTime * float(WINDOW_HEIGHT/2 - xpos );
+        verticalAngle   += mouseSpeed * deltaTime * float( WINDOW_WIDTH/2 - ypos );
+
+        glm::vec3 direction(
+            cos(verticalAngle) * sin(horizontalAngle),
+            sin(verticalAngle),
+            cos(verticalAngle) * cos(horizontalAngle)
+        );
+
+        glm::vec3 right = glm::vec3(
+            sin(horizontalAngle - 3.14f/2.0f),
+            0,
+            cos(horizontalAngle - 3.14f/2.0f)
+        );
+
+        glm::vec3 up = glm::cross( right, direction );
+
+        if (glfwGetKey(window, GLFW_KEY_UP ) == GLFW_PRESS){
+            position = position + glm::mat3(deltaTime * speed)* direction;
+        }
+        if (glfwGetKey(window, GLFW_KEY_DOWN ) == GLFW_PRESS){
+            position -= glm::mat3(deltaTime * speed)* direction;
+        }
+        if (glfwGetKey(window, GLFW_KEY_RIGHT ) == GLFW_PRESS){
+            position += glm::mat3(deltaTime * speed)* right;
+        }
+        if (glfwGetKey(window, GLFW_KEY_LEFT ) == GLFW_PRESS){
+            position -= glm::mat3(deltaTime * speed)* right;
+        }
+
+        float FoV = initialFoV - 5 * Cursor_Wheel_pos;
+
+        ProjectionMatrix= glm::perspective(glm::radians(FoV), 4.0f / 3.0f, 0.1f, 100.0f);
+
+        ViewMatrix=glm::lookAt(
+            position,
+            position+direction,
+            up
+        );
+
+        glm::mat4 MVP = ProjectionMatrix * ViewMatrix * ModelMatrix;
+
         glUseProgram(programID);
-        glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &mvp[0][0]);
+        glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP[0][0]);
 
         glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, Texture);
@@ -232,7 +266,7 @@ int main(){
             (void*)0                          // array buffer offset
         );
 
-        glDrawArrays(GL_TRIANGLES, 0, 20);
+        glDrawArrays(GL_TRIANGLES, 0, (sizeof(g_vertex_buffer_data)/(sizeof(float)*3)));
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
 

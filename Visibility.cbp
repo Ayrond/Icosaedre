@@ -43,6 +43,7 @@
 		</Linker>
 		<Unit filename="Icosaedre.cpp" />
 		<Unit filename="Icosaedre.h" />
+		<Unit filename="Matrix.h" />
 		<Unit filename="Shaders/SimpleFragment.shader">
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>

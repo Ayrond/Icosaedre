@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1542668092 source:/home/lucas/prog/Copernicus/Visibility/main.cpp
+1542715769 source:/home/lucas/prog/Copernicus/Visibility/main.cpp
 	<iostream>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
@@ -33,4 +33,9 @@
 1542668135 /home/lucas/prog/Copernicus/Visibility/Icosaedre.h
 	<GL/glew.h>
 	<glm/glm.hpp>
+
+1542707093 /home/lucas/prog/Copernicus/Visibility/Matrix.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtx/transform.hpp>
 
