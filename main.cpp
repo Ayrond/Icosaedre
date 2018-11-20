@@ -163,7 +163,7 @@ int main(){
 
 //    GLuint Texture = loadBMP_custom("Textures/2k_earth_clouds.bmp");
 
-    GLuint Texture = loadBMP_custom("Textures/Earth_Tetra.bmp");
+    GLuint Texture = loadBMP_custom("Textures/Earth_Tetra2.bmp");
     GLuint TextureID  = glGetUniformLocation(programID, "myTextureSampler");
 
     glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
